@@ -1,5 +1,5 @@
 import { getTexts } from './texts.js';
-import { fillBlanks, getResults } from './fill.js'
+import { fillBlanks, getResults } from './fill-copy.js'
 
 const textContainer = document.getElementById('text-container');
 const promptContainer = document.getElementById('prompt-selection');
@@ -71,7 +71,6 @@ const createPrompt = (index, text, enabled, color) => {
 // returns a the clean text and an array of the 
 const parseText = (index, text, enabled, color) => {
     const matches = text.match(/(?<=\[).*?(?=\])/g) || [];
-
     let i = 0;
     text = text.replaceAll(/\[(.*?)\]/g, function () {
         return `<span class='blank'>${matches[i++]}</span>`
