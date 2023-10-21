@@ -1,5 +1,6 @@
 # sop-blank-fill-game
-By Josh Dean [u1313908] for Writing 3014 SOP Project
+### Use Permission
+Created by Josh Dean [u1313908] for Writing 3014 SOP Project. Use without permission or for a nonintended purpose is not allowed.
 
 ### Overview
 JavaScript(JS) localhost game for MadLibs style fill-in-the-blanks story generation. Meant for younger students to practice JS on, using this project as a starter template. Implementation only needs basic JS knowledge to be completed, and is limited to only one file.
