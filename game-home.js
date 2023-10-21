@@ -140,7 +140,7 @@ const enableButton = (button, oldhandler, newHandler) => {
 // button handlers for the Fill button
 const handleFillButtonEnable = () => {
     textContainer.style.display = 'none';
-    fillContainer.style.display = '';
+    fillContainer.style.display = 'default';
     disableButton(fillButton, handleFillButtonEnable, handleFillButtonDuringFill);
     fillBlanks(activePrompt, blanksFilledEvent);
 };
