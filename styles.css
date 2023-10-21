@@ -41,7 +41,7 @@
     height: 100vh;
     border-left: 13px double var(--active);
     background-color: var(--active);
-    background-image: url('./img/istockphoto-1199029984-612x612-removebg-preview.png');
+    background-image: url('./img/background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

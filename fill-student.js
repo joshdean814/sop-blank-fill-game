@@ -1,5 +1,7 @@
+// import the 'setAlert' function from 'game-home.js' 
 import { setAlert } from './game-home.js';
 
+// DOM element references
 const fillTextContainer = document.getElementById('fill-text-container');
 const wordEntry = document.getElementById('word-input-form');
 const wordInput = document.getElementById('word-input');
@@ -11,14 +13,18 @@ const defText = document.getElementById('def-text');
 const hintText = document.getElementById('hint-text');
 const defTitle = document.getElementById('def-title');
 
+// global variables for word queues and results
 let wordQueue = [];
 let results = [];
 let event = null;
 
+// function to prepare and display fill-in-the-blank words in the text
 export function fillBlanks(enabledPrompt, blanksFilledEvent)  {
     results = [];
     event = blanksFilledEvent;
     let opacity = 1.00;
+
+    // iterate over each word in the enabled prompt, creating display elements
     enabledPrompt.querySelectorAll(':scope > span').forEach(phrase => {
         const word = document.createElement('div');
         word.style.opacity = `${opacity}`;
@@ -28,70 +34,89 @@ export function fillBlanks(enabledPrompt, blanksFilledEvent)  {
         fillTextContainer.appendChild(word);
         opacity -= 0.15;
     });
+
+    // initialize definition and hint for the first word
     setDefinition(wordQueue[0].innerText);
     setHint(wordQueue[0].innerText);
     wordInput.focus();
 };
 
+// function to return results after blanks have been filled
 export function getResults() {
-    // TODO: do not return null!
-    console.log('The curent value of a is:', a);
+    // TODO: this function should return results. Currently, it returns null.
     return null;
-    
 };
 
+// function to swap the display between fill and text containers
 const swapDisplay = () => {
     // TODO: change the textContainer display to be visible
     // TODO: hide the fillContainer display 
     fillContainer.dispatchEvent(event);
 };
 
+// function to set word definitions
 const setDefinition = def => {
-    // TODO: set the value of the definition
-    // TODO: set the title of the definition
+    // TODO: set the definition text based on the provided word
+    // TODO: capitalize the first letter of the word for the title
 };
 
+// function to set word hint
 const setHint = hint => {
-    // TODO: set the hint for that word
+    // TODO: generate an HTML list of hints
+    // TODO: update the hint text with the generated list
 };
 
+// function to remove a word from the queue
 const removeWord = () => {
+    // remove the word element at the front of the queue
     const removed = wordQueue.shift();
     removed.style.fontSize = '0px';
+
+    // set a timeout to handle the removal and transition to the next word
     setTimeout(() => {
         if (wordQueue.length == 0) {
             swapDisplay();
             fillTextContainer.removeChild(removed);
             return;
         }
+        // change opactity for the next word
         let opacity = 1.00;
         wordQueue.forEach(word => {
             word.style.opacity = `${opacity}`;
             opacity -= 0.15;
         });
+
+        // set the definition and hint for the next word
         setDefinition(wordQueue[0].innerText);
         setHint(wordQueue[0].innerText);
-    fillTextContainer.removeChild(removed);
+
+        fillTextContainer.removeChild(removed);
     }, 400);
-   
 };
 
 // TODO: set the value of the event to the input on a keyup event
 // TODO: do not pass null as either argument
 wordEntry.addEventListener(null, null);
 
+// event listener for word submission
 wordEntry.addEventListener('submit', e => {
     e.preventDefault();
+    // check that the entry is valid
     if (wordEntry.value !== undefined && wordEntry.value !== '') {
+        // push the word to results
         results.push(wordEntry.value.trim());
         wordInput.style.backgroundColor = 'lightgreen';
         wordInput.style.color = 'white';
+
+        // reset the entry field
         setTimeout(() => {
             wordEntry.reset();
             wordInput.style.backgroundColor = 'var(--active)';
             wordInput.style.color = 'floralwhite';
         }, 400)
         removeWord();
+
+        // update the cards
         flipCardBack(defCard);
         flipCardBack(hintCard);
     } else {
@@ -99,9 +124,10 @@ wordEntry.addEventListener('submit', e => {
     };
 });
 
+// function to flip a card back to its original state
 const flipCardBack = card => card.children[0].style.transform = '';
 
-
+// function to toggle the visibility of a card by flipping it 
 const flipCard = card => {
     if(card.children[0].style.transform === '') 
         card.children[0].style.transform = 'rotateY(180deg)';
@@ -117,6 +143,7 @@ defCard.addEventListener(null, null);
 // TODO: do not pass null as either argument
 hintCard.addEventListener(null, null);
 
+// dictionary of word definitions for various word types
 const dictionary = {
     person: 'Any human being you might know!', 
     place: 'Somewhere you can go or be!', 
@@ -136,6 +163,7 @@ const dictionary = {
     same_plural_noun: 'That word that ends with "s," which you mentioned previously!'
 };
 
+// hints for different word types
 const hints = {
     person: ['teacher', 'friend', 'parent', 'doctor', 'artist'], 
     place: ['park', 'home', 'school', 'bathroom', 'store'],

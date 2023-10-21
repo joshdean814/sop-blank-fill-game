@@ -29,6 +29,7 @@ Open ```fill-student.js``` and identify any code replaced with a **// TODO:** co
 
 ### Hints
 - JavaScript will run, even when the code is "broken". Pay close attention to the console to make sure that no error messages are getting printed behind the scenes.
+- When a variable is unused in VSCode, it will appear greyed out. Which variables are unused here?
 
 ### Solution
 The working code file is stored in the ```/solutions``` directory, but do not reference it without permission from a teacher.
