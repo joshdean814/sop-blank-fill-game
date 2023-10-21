@@ -1,4 +1,4 @@
-import { setAlert } from './game-home.js';
+import { setAlert } from '../game-home.js';
 
 const fillTextContainer = document.getElementById('fill-text-container');
 const wordEntry = document.getElementById('word-input-form');
