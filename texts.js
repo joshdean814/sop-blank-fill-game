@@ -1,9 +1,11 @@
+// function to retrieve an array of text prompts
 export function getTexts()  {
     return [
         {
+            // text template with placeholders enclosed in brackets
             text: `[name], a [adjective] [noun], decided to [verb] to [place] in search of a legendary [noun]. Armed with [adjective] [noun]s, they encountered a talking [noun] who offered [verb] and [noun]. After [number] days of [verb]ing, they discovered a [adjective] [noun], the world's most [adjective] [noun], which could [verb] anything! They couldn't resist using it on their [noun], creating a [adjective] [place]. [name]'s [place] turned into a [adjective] wonderland filled with [noun]s [verb]ing and [adjective] [noun] [verb]ing, making it the silliest [place] ever. And so, [name] and their [adjective] [place] lived happily ever after, with [noun]s [verb]ing and [adjective] [noun] [verb]ing all day, making everyone laugh!`,
-            enabled: true, 
-            color: [237, 117, 113]
+            enabled: true, // whether this text prompt is initially enabled
+            color: [237, 117, 113] // RGB color theme for this text prompt
         }, 
         {
             text: `[name], the [adjective] [noun], embarked on a [adjective] journey to find a legendary [noun]. Along the way, they met a talking [noun] who offered many [plural noun]. With the help of [adjective] [plural noun], they completed three [adjective] tasks: [verb], [verb], and [verb]. Returning to [place], [name] used their newfound [noun] to bring [adjective] joy to the land. And so, [name] became a [adjective] hero, known for [adjective] [noun] and [adjective] [noun].`, 
