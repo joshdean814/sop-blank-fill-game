@@ -33,4 +33,4 @@ Open ```fill-student.js``` and identify any code replaced with a **// TODO:** co
 - When a variable is unused in VSCode, it will appear greyed out. Which variables are unused here?
 
 ### Solution
-The working code file is stored in the ```/solutions``` directory, but do not reference it without permission from a teacher.
+The working code file is stored in the ```/solutions``` directory, but **do not reference it without permission** from a teacher.
