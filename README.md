@@ -19,7 +19,7 @@ JavaScript(JS) localhost game for MadLibs style fill-in-the-blanks story generat
 
 ```texts.js``` basic JS file storing the prompt text and related data.
 
-```/img``` image directory storing background image.
+```/img``` directory storing necessary images.
 
 ### Setup
 Open ```game-home.html``` and use the Live Server plugin to view the incomplete game on a browser. Play around with the functionality. What seems to be broken inside the game?
