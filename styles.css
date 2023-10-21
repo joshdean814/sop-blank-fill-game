@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: [first] 220px [second] auto;
     font-family: arial;
-    overflow-y: hidden;
+    overflow-y: scroll;
     
 }
 #prompt-selection-container{

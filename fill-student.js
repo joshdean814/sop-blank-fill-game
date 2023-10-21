@@ -1,5 +1,5 @@
 // import the 'setAlert' function from 'game-home.js' 
-import { setAlert } from './game-home.js';
+import { setAlert } from '../game-home.js';
 
 // DOM element references
 const fillTextContainer = document.getElementById('fill-text-container');
@@ -43,27 +43,36 @@ export function fillBlanks(enabledPrompt, blanksFilledEvent)  {
 
 // function to return results after blanks have been filled
 export function getResults() {
-    // TODO: this function should return results. Currently, it returns null.
-    return null;
+    return results;
 };
 
 // function to swap the display between fill and text containers
 const swapDisplay = () => {
-    // TODO: change the textContainer display to be visible
-    // TODO: hide the fillContainer display 
+    textContainer.style.display = '';
+    fillContainer.style.display = 'none';
     fillContainer.dispatchEvent(event);
 };
 
-// function to set word definitions
+// function to set the definition and title for a word
 const setDefinition = def => {
-    // TODO: set the innerText to def 
-    // TODO: capitalize the first letter of the word and set to title
+    // set the definition text based on the provided word
+    defText.innerText = dictionary[def.toLowerCase().replace(' ','_')];
+
+    // capitalize the first letter of the word for the title
+    def = def.toLowerCase();
+    def = def.charAt(0).toUpperCase() + def.slice(1);
+    defTitle.innerText = def;
 };
 
-// function to set word hint
+// function to set a word hint
 const setHint = hint => {
-    // TODO: generate an HTML list of hints
-    // TODO: update the hint text with the generated list
+    // generate an HTML list of hints
+    let html = ``;
+    hints[hint.toLowerCase().replace(' ', '_')].forEach(hint => html += `<li>${hint}</li>`);
+    html = `<ul>${html}</ul>`;
+
+    // update the hint text with the generated list
+    hintText.innerHTML = html;
 };
 
 // function to remove a word from the queue
@@ -94,9 +103,10 @@ const removeWord = () => {
     }, 400);
 };
 
-// TODO: set the value of the event to the input on a keyup event
-// TODO: do not pass null as either argument
-wordEntry.addEventListener(null, null);
+// event listener to get update the value of the form on keyup event
+wordEntry.addEventListener('keyup', e => {
+    wordEntry.value = e.target.value;
+});
 
 // event listener for word submission
 wordEntry.addEventListener('submit', e => {
@@ -135,13 +145,15 @@ const flipCard = card => {
         card.children[0].style.transform = '';
 };
 
-// TODO: flip the definition card when it is clicked
-// TODO: do not pass null as either argument
-defCard.addEventListener(null, null);
+// event listener for clicking the definition card
+defCard.addEventListener('click', e => {
+    flipCard(defCard);
+});
 
-// TODO: flip the hint card when it is clicked
-// TODO: do not pass null as either argument
-hintCard.addEventListener(null, null);
+// event listener for clicking the hint card
+hintCard.addEventListener('click', e => {
+   flipCard(hintCard);
+});
 
 // dictionary of word definitions for various word types
 const dictionary = {
