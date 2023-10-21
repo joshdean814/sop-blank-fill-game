@@ -35,7 +35,9 @@ export function fillBlanks(enabledPrompt, blanksFilledEvent)  {
 
 export function getResults() {
     // TODO: do not return null!
+    console.log('The curent value of a is:', a);
     return null;
+    
 };
 
 const swapDisplay = () => {

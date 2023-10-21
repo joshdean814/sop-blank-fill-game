@@ -1,5 +1,5 @@
 import { getTexts } from './texts.js';
-import { fillBlanks, getResults } from './fill-copy.js'
+import { fillBlanks, getResults } from './fill-student.js'
 
 const textContainer = document.getElementById('text-container');
 const promptContainer = document.getElementById('prompt-selection');
