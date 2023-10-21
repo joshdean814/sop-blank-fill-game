@@ -11,7 +11,7 @@ JavaScript(JS) localhost game for MadLibs style fill-in-the-blanks story generat
 
 ```fill-student.js``` the **only** file that should be altered. All other files are readonly (do not change). This file handles anything related to the fill event in the project.
 
-```game-home.html``` core HTML for the project, provides basic structure for JavaScript to work with. Reference this to understand any DOM elements.
+```game-home.html``` core HTML for the project, provides basic structure for JavaScript to work with. Reference this to understand the source of any DOM elements.
 
 ```game-home.js``` main JS file preparing many of the forms and styles leading up to a fill event.
 
