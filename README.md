@@ -1,6 +1,6 @@
 # sop-blank-fill-game
 ### Permissions
-Created by Josh Dean [u1313908] for Writing 3014 SOP Project. Use without permission or for a nonintended purpose is not allowed.
+Created by Josh Dean [u1313908] for Writing 3014 SOP Project. Use without permission or for a nonintended purpose is strictly prohibited.
 
 Last Edited: **10/21/2023**
 
