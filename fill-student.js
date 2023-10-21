@@ -56,8 +56,8 @@ const swapDisplay = () => {
 
 // function to set word definitions
 const setDefinition = def => {
-    // TODO: set the definition text based on the provided word
-    // TODO: capitalize the first letter of the word for the title
+    // TODO: set the innerText to def 
+    // TODO: capitalize the first letter of the word and set to title
 };
 
 // function to set word hint
