@@ -25,7 +25,7 @@ JavaScript(JS) localhost game for MadLibs style fill-in-the-blanks story generat
 Open ```game-home.html``` and use the Live Server plugin to view the incomplete game on a browser. Play around with the functionality. What seems to be broken inside the game?
 
 ### Implementation
-Open ```fill-student.js``` and identify any code replaced with a **// TODO:** comment. These are the important areas to focus on. All of them must be completed for the code to work as intended
+Open ```fill-student.js``` and identify any code replaced with a **// TODO:** comment. These are the important areas to focus on. All of them must be completed for the code to work as intended.
 
 ### Hints
 - JavaScript will run, even when the code is "broken". Pay close attention to the console to make sure that no error messages are getting printed behind the scenes.
