@@ -146,12 +146,12 @@ const flipCard = card => {
 };
 
 // event listener for clicking the definition card
-defCard.addEventListener('click', () => {
+defCard.addEventListener('click', e => {
     flipCard(defCard);
 });
 
 // event listener for clicking the hint card
-hintCard.addEventListener('click', () => {
+hintCard.addEventListener('click', e => {
    flipCard(hintCard);
 });
 
